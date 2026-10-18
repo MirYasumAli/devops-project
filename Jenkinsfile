@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Test') {
+            steps {
+                echo 'Jenkins is working!'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t devops-web:v2 .'
+            }
+        }
+
+    }
+}
